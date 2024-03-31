@@ -1,0 +1,73 @@
+---
+- name: "zsh | Detect oh-my-zsh"
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh"
+  register: ohmyzsh
+
+- name: "zsh | Register oh-my-zsh state"
+  ansible.builtin.set_fact:
+    ohmyzsh_is_installed: "{{ ohmyzsh.stat.exists }}"
+
+- name: "zsh | Debug ohmyzsh_is_installed"
+  ansible.builtin.debug:
+    var: ohmyzsh_is_installed
+
+
+- name: "zsh | Install oh-my-zsh"
+  when: not ohmyzsh_is_installed
+  block:
+    - name: "zsh | Download oh-my-zsh"
+      ansible.builtin.get_url:
+        url: "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+        dest: "{{ ansible_user_dir }}/oh-my-zsh.install.sh"
+        force: true
+        mode: "0755"
+
+    - name: "zsh | Run oh-my-zsh install script"
+      ansible.builtin.script:
+        cmd: "{{ ansible_user_dir }}/oh-my-zsh.install.sh"
+
+- name: "zsh | Install Powerlevel10k"
+  ansible.builtin.git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    update: no
+    depth: 1
+
+- name: "zsh | Install zsh-autosuggestions"
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    update: no
+
+- name: "zsh | Install zsh-syntax-highlighting"
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    update: no
+
+- name: "zsh | Copy .zshrc"
+  ansible.builtin.copy:
+    src: "zshrc"
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    mode: "0644"
+
+
+- name: "zsh | Copy .alias"
+  ansible.builtin.copy:
+    src: "alias"
+    dest: "{{ ansible_user_dir }}/.alias"
+    mode: "0644"
+
+- name: "zsh | Copy .java_setup"
+  ansible.builtin.copy:
+    src: "java_setup"
+    dest: "{{ ansible_user_dir }}/.java_setup"
+    mode: "0644"
+
+- name: "zsh | Copy .p10k.zsh"
+  ansible.builtin.copy:
+    src: "p10k.zsh"
+    dest: "{{ ansible_user_dir }}/.p10k.zsh"
+    mode: "0644"
+

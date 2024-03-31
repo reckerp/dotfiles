@@ -1,0 +1,59 @@
+---
+- name: Install Maven
+  community.general.homebrew:
+    name: maven
+    state: latest
+
+- name: Install Pandoc
+  community.general.homebrew:
+    name: pandoc
+    state: latest
+
+- name: Docker
+  community.general.homebrew_cask:
+    name: docker
+    state: latest
+
+- name: GH CLI
+  community.general.homebrew:
+    name: gh
+    state: latest
+
+- name: Install Eza
+  community.general.homebrew:
+    name: eza
+    state: latest
+
+- name: Install FZF
+  community.general.homebrew:
+    name: fzf
+    state: latest
+
+- name: Install Ripgrep
+  community.general.homebrew:
+    name: ripgrep
+    state: latest
+
+- name: Install zoxide
+  community.general.homebrew:
+    name: zoxide
+    state: latest
+
+- name: Install NVM
+  block: 
+    - name: Create .nvm directory
+      file:
+        path: ~/.nvm
+        state: directory
+        mode: 0770  
+
+    - name: Download nvm installation script 
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
+        dest: /tmp/install-nvm.sh
+        force: true
+        mode: 0755
+
+    - name: Install NVM
+      ansible.builtin.script:
+        cmd: "/tmp/install-nvm.sh && source ~/.nvm/nvm.sh"

@@ -1,0 +1,5 @@
+- name: Copy Wakatime API key 
+  copy:
+    dest: "{{ ansible_user_dir }}/.wakatime.cfg"
+    content: "{{ wakatime_api_key }}"
+    mode: 0600

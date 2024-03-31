@@ -1,0 +1,53 @@
+- name: Install Go Lang
+  community.general.homebrew:
+    name: go
+    state: latest
+
+- name: Install Rust Lang
+  shell: "brew install rustup-init && rustup-init -y && source $HOME/.cargo/env"
+
+- name: Install Node.js
+  community.general.homebrew:
+    name: node
+    state: latest
+
+- name: Install Bun
+  block:
+    - name: Bun | Tap 
+      community.general.homebrew_tap:
+        name: oven-sh/bun
+        state: present
+    - name: Bun | Install
+      community.general.homebrew:
+        name: bun
+        state: latest
+
+- name: Install Python
+  community.general.homebrew:
+    name: python
+    state: latest
+
+- name: Install Java
+  community.general.homebrew:
+    name: java
+    state: latest
+
+
+- name: Install OpenJDK 17 
+  community.general.homebrew:
+    name: openjdk@17
+    state: present
+
+- name: Install OpenJDK 11
+  community.general.homebrew:
+    name: openjdk@11
+    state: present
+
+- name: Install OpenJDK 21
+  community.general.homebrew:
+    name: openjdk@21
+    state: present
+
+
+
+

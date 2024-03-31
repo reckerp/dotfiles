@@ -1,0 +1,39 @@
+---
+- name: "Git | Set init.defaultBranch"
+  community.general.git_config:
+    name: init.defaultBranch
+    scope: global
+    value: main
+
+- name: "Git | Set user.email"
+  command: git config --global user.email "{{ git_user_email }}"
+
+- name: "Git | Set user.name"
+  command: git config --global user.name "{{ git_user_name }}"
+
+- name: Create .ssh dir
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.ssh"
+    state: directory
+    mode: '0755'
+
+- name: "Git | Copy Signing Key public"
+  copy:
+    dest: "{{ ansible_user_dir }}/.ssh/git_sign_key.pub"
+    content: "{{ git_sign_key_pub }}"
+    mode: '0400'
+
+- name: "Git | Copy Signing Key private"
+  copy:
+    dest: "{{ ansible_user_dir }}/.ssh/git_sign_key"
+    content: "{{ git_sign_key }}"
+    mode: '0400'
+
+- name: "Git | Set Sign Format"
+  command: git config --global gpg.format ssh
+
+- name: "Git | Set Sign Key"
+  command: git config --global user.signingkey ~/.ssh/git_sign_key.pub
+
+- name: "Git | Turn on signing"
+  command: git config --global commit.gpgsign true

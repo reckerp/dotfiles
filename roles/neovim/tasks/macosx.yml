@@ -1,0 +1,5 @@
+---
+- name: Install Neovim using Homebrew
+  community.general.homebrew:
+    name: neovim
+    state: latest
