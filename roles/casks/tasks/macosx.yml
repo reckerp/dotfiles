@@ -83,3 +83,8 @@
   community.general.homebrew_cask:
     name: brave-browser
     state: latest
+
+- name: Homebrew | Install Amethyst
+  community.general.homebrew_cask:
+    name: amethyst 
+    state: latest
