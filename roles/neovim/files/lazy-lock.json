@@ -18,6 +18,8 @@
   "nvim-cmp": { "branch": "main", "commit": "6ed1c93465c33f6a53b4c3f103bf9d1ab696382a" },
   "nvim-lspconfig": { "branch": "master", "commit": "24662f92c18edd397ef12d635b11dbdedef2d094" },
   "nvim-markdown-preview": { "branch": "master", "commit": "3d6f941beb223b23122973d077522e9e2ee33068" },
+  "nvim-platformio.lua": { "branch": "main", "commit": "bbc97d146293090a5abe2b238f5f3bf6aac88726" },
+  "nvim-toggleterm.lua": { "branch": "main", "commit": "193786e0371e3286d3bc9aa0079da1cd41beaa62" },
   "nvim-treesitter": { "branch": "master", "commit": "b009aba903565163442f2adecff72bc3193bb8fd" },
   "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
   "telescope-bibtex.nvim": { "branch": "master", "commit": "4117b6aad1d1fa7526a31bfcdc9741d11ee4a22c" },
