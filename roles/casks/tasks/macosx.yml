@@ -88,3 +88,14 @@
   community.general.homebrew_cask:
     name: amethyst 
     state: latest
+
+- name: Homebrew | Install Postman
+  community.general.homebrew_cask:
+    name: postman
+    state: latest
+
+- name: Homebrew | Install Boop
+  community.general.homebrew_cask:
+    name: boop
+    state: latest
+
