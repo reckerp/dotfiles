@@ -167,6 +167,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
+  change_detection = { notify = false },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 
   -- NOTE: Plugins can also be added by using a table,
@@ -750,7 +751,7 @@ require('lazy').setup {
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    -- build = ':TSUpdate',
+    build = ':TSUpdate',
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
