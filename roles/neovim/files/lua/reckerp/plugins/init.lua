@@ -59,7 +59,12 @@ return {
       vim.keymap.set('n', '<leader>sl', ':Telescope bibtex<CR>', {})
     end,
   },
-  { 'mbbill/undotree' },
+  {
+    'mbbill/undotree',
+    config = function()
+      vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+    end,
+  },
   {
     'davidgranstrom/nvim-markdown-preview',
     config = function()
