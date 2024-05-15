@@ -1,5 +1,10 @@
 return {
-  { 'github/copilot.vim' },
+  {
+    'github/copilot.vim',
+    config = function()
+      vim.cmd 'Copilot disable'
+    end,
+  },
   { 'wakatime/vim-wakatime' },
   {
     'ThePrimeagen/harpoon',
