@@ -4,10 +4,6 @@
     name: wezterm
     state: latest
 
-- name: Wezterm | Tap NerdFonts
-  community.general.homebrew_tap:
-    name: homebrew/cask-fonts
-
 - name: Wezterm | Install Jetbrains Mono NF
   community.general.homebrew_cask:
     name: font-jetbrains-mono-nerd-font
