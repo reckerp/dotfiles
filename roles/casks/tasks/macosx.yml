@@ -49,11 +49,6 @@
     name: deepl
     state: latest
 
-- name: Homebrew | Install Adobe Creative Cloud
-  community.general.homebrew_cask:
-    name: adobe-creative-cloud
-    state: latest
-
 - name: Homebrew | Install Anki
   community.general.homebrew_cask:
     name: anki

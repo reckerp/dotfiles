@@ -7,6 +7,8 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
+vim.opt.termguicolors = true
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -53,9 +55,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
--- Background transparency with nord scheme
-vim.g.nord_disable_background = true
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

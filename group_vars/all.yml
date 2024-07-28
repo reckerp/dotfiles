@@ -1,14 +1,14 @@
 default_roles:
-  - neovim
   - zsh
-  - alacritty
-  - wakatime
-  - git
+  - wezterm
+  - starship
   - tmux
+  - git
+  - neovim
+  - wakatime
   - langs
   - tools
-  # - casks
-  #
+  - casks
 
 
 git_user_name: "reckerp"

@@ -27,27 +27,3 @@
     name: python
     state: latest
 
-- name: Install Java
-  community.general.homebrew:
-    name: java
-    state: latest
-
-
-- name: Install OpenJDK 17 
-  community.general.homebrew:
-    name: openjdk@17
-    state: present
-
-- name: Install OpenJDK 11
-  community.general.homebrew:
-    name: openjdk@11
-    state: present
-
-- name: Install OpenJDK 21
-  community.general.homebrew:
-    name: openjdk@21
-    state: present
-
-
-
-

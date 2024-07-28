@@ -11,9 +11,12 @@ alias gpl="git pull"
 alias gst="git stash"
 alias gsp="git stash pop"
 alias gch="git checkout"
+alias glg="git log --graph --oneline"
 
 alias 2cd..="cd ../.."
 
 alias ls="eza -l --header --icons --git"
 
 alias py="python3"
+
+alias tmx="~/Developer/private/tools/tmux-sessionizer.sh"
