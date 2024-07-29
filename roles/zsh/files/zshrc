@@ -32,7 +32,6 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 source $ZSH/oh-my-zsh.sh
 
 # alias
-source ~/.java_setup
 source ~/.alias
 
 
