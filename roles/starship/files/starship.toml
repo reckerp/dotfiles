@@ -1,0 +1,63 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$docker_context\
+$nodejs\
+$golang\
+$c\
+$python\
+$line_break\
+$character"""
+
+add_newline = false
+
+[fill]
+symbol = " "
+
+[directory]
+style = "blue"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](blue)"
+error_symbol = "[❯](red)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+
+[golang]
+format = "[ ($version )]($style)"
+[nodejs]
+format = "[$symbol($version )]($style)"
+[c]
+format = "[ ($version )]($style)"
+[python]
+format = "[ ($version (-  $virtualenv))]($style)"
+
+[docker_context]
+format = '[  - ](blue bold)'
