@@ -39,18 +39,14 @@
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     update: no
 
-- name: "zsh | Link .zshrc"
-  ansible.builtin.file:
+- name: "zsh | Copy .zshrc"
+  ansible.builtin.copy:
     src: "zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
-    state: link
     force: true
 
-
-- name: "zsh | Link .alias"
-  ansible.builtin.file:
+- name: "zsh | Copy .alias"
+  ansible.builtin.copy:
     src: "alias"
     dest: "{{ ansible_user_dir }}/.alias"
-    state: link
     force: true
-
