@@ -39,6 +39,11 @@
     name: zoxide
     state: latest
 
+- name: Install pyenv
+  community.general.homebrew:
+    name: pyenv 
+    state: latest
+
 - name: Install NVM
   block: 
     - name: Create .nvm directory
