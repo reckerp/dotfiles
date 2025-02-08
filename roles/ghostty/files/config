@@ -1,0 +1,24 @@
+theme = light:catppuccin-latte,dark:catppuccin-mocha
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 13
+font-thicken = true
+font-style = ExtraBold
+
+window-decoration = true
+macos-titlebar-style = hidden
+window-padding-y = 8
+window-padding-x = 8
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+shell-integration = zsh
+clipboard-read = allow
+clipboard-write = allow
+background-opacity = 0.75
+background-blur-radius = 60
+
+command = /bin/zsh -l -c 'tmux attach || tmux'

@@ -1,10 +1,10 @@
 ---
-- name: Wezterm | Install
+- name: Ghostty | Install
   community.general.homebrew:
-    name: wezterm
+    name: ghostty
     state: latest
 
-- name: Wezterm | Install Jetbrains Mono NF
+- name: Ghostty | Install Jetbrains Mono Nerd Font
   community.general.homebrew_cask:
     name: font-jetbrains-mono-nerd-font
 
