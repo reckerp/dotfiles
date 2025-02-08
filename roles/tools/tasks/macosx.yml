@@ -69,6 +69,16 @@
     name: terraform
     state: latest
 
+- name: Install lazygit
+  community.general.homebrew:
+    name: lazygit
+    state: latest
+
+- name: Install k9s
+  community.general.homebrew:
+    name: k9s
+    state: latest
+
 - name: Install NVM
   block: 
     - name: Create .nvm directory
