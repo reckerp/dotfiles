@@ -1,9 +1,4 @@
 ---
-- name: Homebrew | Install Spotify
-  community.general.homebrew_cask:
-    name: spotify
-    state: latest
-
 - name: Homebrew | Install 1Password
   community.general.homebrew_cask:
     name: 1password
@@ -14,29 +9,14 @@
     name: raycast 
     state: latest
 
-- name: Homebrew | Install Discord
-  community.general.homebrew_cask:
-    name: discord
-    state: latest
-
 - name: Homebrew | Install CommandX
   community.general.homebrew_cask:
     name: command-x
     state: latest
 
-- name: Homebrew | Install Notion
-  community.general.homebrew_cask:
-    name: notion
-    state: latest
-
 - name: Homebrew | Install Dozer
   community.general.homebrew_cask:
     name: dozer
-    state: latest
-
-- name: Homebrew | Install TextSniper
-  community.general.homebrew_cask:
-    name: textsniper
     state: latest
 
 - name: Homebrew | Install Jetbrains Toolbox
@@ -49,16 +29,6 @@
     name: deepl
     state: latest
 
-- name: Homebrew | Install Adobe Creative Cloud
-  community.general.homebrew_cask:
-    name: adobe-creative-cloud
-    state: latest
-
-- name: Homebrew | Install Anki
-  community.general.homebrew_cask:
-    name: anki
-    state: latest
-
 - name: Homebrew | Install Todoist
   community.general.homebrew_cask:
     name: todoist
@@ -69,24 +39,9 @@
     name: appcleaner
     state: latest
 
-- name: Homebrew | Install LogiOptions+
-  community.general.homebrew_cask:
-    name: logi-options-plus
-    state: latest
-
 - name: Homebrew | Install Firefox
   community.general.homebrew_cask:
     name: firefox
-    state: latest
-
-- name: Homebrew | Install Brave
-  community.general.homebrew_cask:
-    name: brave-browser
-    state: latest
-
-- name: Homebrew | Install Amethyst
-  community.general.homebrew_cask:
-    name: amethyst 
     state: latest
 
 - name: Homebrew | Install Postman

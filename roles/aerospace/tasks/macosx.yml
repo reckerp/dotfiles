@@ -1,0 +1,5 @@
+---
+- name: Install Aerospace using Homebrew
+  community.general.homebrew:
+    name: nikitabobko/tap/aerospace
+    state: latest

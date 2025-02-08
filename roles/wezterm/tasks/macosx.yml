@@ -1,0 +1,10 @@
+---
+- name: Wezterm | Install
+  community.general.homebrew:
+    name: wezterm
+    state: latest
+
+- name: Wezterm | Install Jetbrains Mono NF
+  community.general.homebrew_cask:
+    name: font-jetbrains-mono-nerd-font
+

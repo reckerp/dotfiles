@@ -63,3 +63,7 @@ end, { silent = false })
 -- Copilot shortcuts
 vim.keymap.set('n', '<leader>cpe', '<cmd>Copilot enable<CR>', { silent = false })
 vim.keymap.set('n', '<leader>cpd', '<cmd>Copilot disable<CR>', { silent = false })
+
+-- Terminal shortcuts
+vim.api.nvim_set_keymap('n', '<leader>t', ':sp | term<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<leader>q', [[<C-\><C-n>:q<CR>]], { noremap = true, silent = true })

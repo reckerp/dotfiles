@@ -27,13 +27,6 @@
       ansible.builtin.script:
         cmd: "{{ ansible_user_dir }}/oh-my-zsh.install.sh"
 
-- name: "zsh | Install Powerlevel10k"
-  ansible.builtin.git:
-    repo: https://github.com/romkatv/powerlevel10k.git
-    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/themes/powerlevel10k"
-    update: no
-    depth: 1
-
 - name: "zsh | Install zsh-autosuggestions"
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
@@ -50,24 +43,10 @@
   ansible.builtin.copy:
     src: "zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
-    mode: "0644"
-
+    force: true
 
 - name: "zsh | Copy .alias"
   ansible.builtin.copy:
     src: "alias"
     dest: "{{ ansible_user_dir }}/.alias"
-    mode: "0644"
-
-- name: "zsh | Copy .java_setup"
-  ansible.builtin.copy:
-    src: "java_setup"
-    dest: "{{ ansible_user_dir }}/.java_setup"
-    mode: "0644"
-
-- name: "zsh | Copy .p10k.zsh"
-  ansible.builtin.copy:
-    src: "p10k.zsh"
-    dest: "{{ ansible_user_dir }}/.p10k.zsh"
-    mode: "0644"
-
+    force: true
