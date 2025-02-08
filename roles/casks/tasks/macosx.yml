@@ -49,7 +49,7 @@
     name: deepl
     state: latest
 
-- name: Homebrew | Install Todoist
+- name: Homebrew | Install TickTick
   community.general.homebrew_cask:
     name: todoist
     state: latest
@@ -84,3 +84,13 @@
     name: cursor
     state: latest
 
+- name: Homebrew | Install Flutter
+  community.general.homebrew_cask:
+    name: flutter
+    state: latest
+
+- name: Homebrew | Install Yubico Authenticator
+  community.general.homebrew_cask:
+    name: yubico-authenticator
+    state: latest
+    

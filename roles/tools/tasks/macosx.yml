@@ -14,6 +14,11 @@
     name: docker
     state: latest
 
+- name: Install minikube
+  community.general.homebrew:
+    name: minikube
+    state: latest
+
 - name: GH CLI
   community.general.homebrew:
     name: gh
@@ -77,6 +82,11 @@
 - name: Install k9s
   community.general.homebrew:
     name: k9s
+    state: latest
+
+- name: Install xh
+  community.general.homebrew:
+    name: xh
     state: latest
 
 - name: Install NVM

@@ -12,7 +12,6 @@
   ansible.builtin.debug:
     var: ohmyzsh_is_installed
 
-
 - name: "zsh | Install oh-my-zsh"
   when: not ohmyzsh_is_installed
   block:
@@ -49,4 +48,22 @@
   ansible.builtin.copy:
     src: "alias"
     dest: "{{ ansible_user_dir }}/.alias"
+    force: true
+
+- name: "zsh | Copy .secrets"
+  ansible.builtin.copy:
+    content: "{{ zsh_s }}"
+    dest: "{{ ansible_user_dir }}/.secrets"
+    force: true
+
+- name: "zsh | Create ssh directory if it doesn't exist"
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.ssh"
+    state: directory
+    mode: "0755"
+
+- name: "zsh | Copy ssh config"
+  ansible.builtin.copy:
+    content: "{{ ssh_config }}"
+    dest: "{{ ansible_user_dir }}/.ssh/config"
     force: true

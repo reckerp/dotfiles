@@ -2,6 +2,7 @@ alias tmp="mkdir ~/Desktop/tmp && cd ~/Desktop/tmp"
 alias dtmp="rm -rf ~/Desktop/tmp"
 
 alias nv="nvim"
+alias kc="kubectl"
 
 alias ga="git add ."
 alias gs="git status"
@@ -13,10 +14,8 @@ alias gsp="git stash pop"
 alias gch="git checkout"
 alias glg="git log --graph --oneline"
 
-alias 2cd..="cd ../.."
-
 alias ls="eza -l --header --icons --git"
 
 alias py="python3"
 
-alias tmx="~/Developer/private/tools/tmux-sessionizer.sh"
+alias ip="curl ifconfig.me"
