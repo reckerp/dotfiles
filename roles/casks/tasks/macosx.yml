@@ -4,6 +4,26 @@
     name: 1password
     state: latest
 
+- name: Homebrew | Install Arc
+  community.general.homebrew_cask:
+    name: arc
+    state: latest
+
+- name: Homebrew | Install Spotify
+  community.general.homebrew_cask:
+    name: spotify
+    state: latest
+
+- name: Homebrew | Install Notion
+  community.general.homebrew_cask:
+    name: notion
+    state: latest
+
+- name: Homebrew | Install Slack
+  community.general.homebrew_cask:
+    name: slack
+    state: latest
+
 - name: Homebrew | Install Raycast
   community.general.homebrew_cask:
     name: raycast 
@@ -14,9 +34,9 @@
     name: command-x
     state: latest
 
-- name: Homebrew | Install Dozer
+- name: Homebrew | Install Bartender
   community.general.homebrew_cask:
-    name: dozer
+    name: bartender
     state: latest
 
 - name: Homebrew | Install Jetbrains Toolbox
@@ -52,5 +72,15 @@
 - name: Homebrew | Install Boop
   community.general.homebrew_cask:
     name: boop
+    state: latest
+
+- name: Homebrew | Install Lens
+  community.general.homebrew_cask:
+    name: lens
+    state: latest
+
+- name: Homebrew | Install Cursor
+  community.general.homebrew_cask:
+    name: cursor
     state: latest
 

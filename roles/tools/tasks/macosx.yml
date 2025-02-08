@@ -44,6 +44,31 @@
     name: pyenv 
     state: latest
 
+- name: Install kubectl
+  community.general.homebrew:
+    name: kubernetes-cli
+    state: latest
+
+- name: Install helm
+  community.general.homebrew:
+    name: helm
+    state: latest
+
+- name: Install kubectx
+  community.general.homebrew:
+    name: kubectx
+    state: latest
+
+- name: Install hcloud
+  community.general.homebrew:
+    name: hcloud
+    state: latest
+  
+- name: Install terraform
+  community.general.homebrew:
+    name: terraform
+    state: latest
+
 - name: Install NVM
   block: 
     - name: Create .nvm directory
