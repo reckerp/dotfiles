@@ -24,6 +24,11 @@
     name: gh
     state: latest
 
+- name: GH CLI | Add dash extension
+  ansible.builtin.command:
+    cmd: gh extension install dlvhdr/gh-dash
+    creates: ~/.local/share/gh/extensions/gh-dash
+
 - name: Install Eza
   community.general.homebrew:
     name: eza
