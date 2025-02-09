@@ -51,7 +51,7 @@
 
 - name: Homebrew | Install TickTick
   community.general.homebrew_cask:
-    name: todoist
+    name: ticktick
     state: latest
 
 - name: Homebrew | Install AppCleaner
