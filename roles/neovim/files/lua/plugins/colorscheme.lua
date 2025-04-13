@@ -5,26 +5,33 @@ return {
       update_interval = 1000,
       set_dark_mode = function()
         vim.api.nvim_set_option("background", "dark")
-        vim.cmd("colorscheme catppuccin-mocha")
+        vim.cmd("colorscheme gruvbox")
+        -- Apply GruvboxDarkHard contrast
+        vim.g.gruvbox_contrast_dark = "hard"
       end,
       set_light_mode = function()
         vim.api.nvim_set_option("background", "light")
-        vim.cmd("colorscheme catppuccin-latte")
+        vim.cmd("colorscheme gruvbox")
+        -- Normal light contrast
+        vim.g.gruvbox_contrast_light = "medium"
       end,
     },
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
     priority = 1000,
     lazy = false,
     opts = {
-      flavour = "mocha",
-      transparent_background = true,
-      styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
+      transparent_mode = true,
+      italic = {
+        strings = false,
+        comments = true,
+        operators = false,
+        folds = true,
+        conditionals = true,
       },
+      -- Plugin integration settings
       integrations = {
         cmp = true,
         gitsigns = true,
@@ -35,9 +42,10 @@ return {
       },
     },
     config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
+      require("gruvbox").setup(opts)
+      -- Set default dark contrast to hard
+      vim.g.gruvbox_contrast_dark = "hard"
+      vim.cmd.colorscheme("gruvbox")
     end,
   },
 }
-

@@ -1,8 +1,8 @@
-theme = light:catppuccin-latte,dark:catppuccin-mocha
-font-family = JetBrainsMono Nerd Font Mono
+theme = light:GruvboxLightHard,dark:GruvboxDarkHard
+font-family = TX-02
 font-size = 13
 font-thicken = true
-font-style = ExtraBold
+font-style = SemiBold
 
 window-decoration = true
 macos-titlebar-style = hidden
@@ -18,7 +18,8 @@ adjust-underline-thickness = -60%
 shell-integration = zsh
 clipboard-read = allow
 clipboard-write = allow
-background-opacity = 0.75
-background-blur-radius = 60
+background-opacity = 0.90
+background-blur-radius = 80
 
 command = /bin/zsh -l -c 'tmux attach || tmux'
+
