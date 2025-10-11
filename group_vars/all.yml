@@ -11,6 +11,56 @@ default_roles:
   - tools
   - casks
 
+cask_apps:
+  - 1password
+  - google-chrome
+  - spotify
+  - notion
+  - raycast
+  - command-x
+  - bartender
+  - jetbrains-toolbox
+  - ticktick
+  - appcleaner
+  - firefox
+  - bruno
+  - boop
+  - cursor
+  - yubico-authenticator
+  - tailscale-app
+
+homebrew_packages:
+  - gch
+  - pandoc
+  - gh
+  - eza
+  - fzf
+  - ripgrep
+  - zoxide
+  - hcloud
+  - terraform
+  - lazygit
+  - opencode
+
+homebrew_cask_packages:
+  - typst
+  - docker
+
+homebrew_taps:
+  - reckerp/tap
+
+languages:
+  - name: go
+    type: brew
+  - name: node
+    type: brew
+  - name: python
+    type: brew
+  - name: uv
+    type: brew
+  - name: oven-sh/bun/bun
+    type: brew
+
 git_user_name: "reckerp"
 git_user_email: !vault |
   $ANSIBLE_VAULT;1.1;AES256

@@ -1,28 +1,34 @@
-- name: Install Go Lang
+---
+- name: Install languages via Homebrew
   community.general.homebrew:
-    name: go
-    state: latest
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ languages }}"
+  when: item.type == 'brew'
+  tags:
+    - langs
+    - languages
 
-- name: Install Rust Lang
-  shell: "brew install rustup-init && rustup-init -y && source $HOME/.cargo/env"
-
-- name: Install Node.js
+- name: Install rustup
   community.general.homebrew:
-    name: node
-    state: latest
+    name: rustup-init
+    state: present
+  tags:
+    - langs
+    - rust
 
-- name: Bun | Install
-  community.general.homebrew:
-    name: oven-sh/bun/bun
-    state: latest
+- name: Check if Rust is already installed
+  ansible.builtin.stat:
+    path: ~/.cargo/bin/rustc
+  register: rust_installed
+  tags:
+    - langs
+    - rust
 
-- name: Install Python
-  community.general.homebrew:
-    name: python
-    state: latest
-
-- name: Install UV
-  community.general.homebrew:
-    name: uv
-    state: latest
-
+- name: Initialize Rust via rustup
+  ansible.builtin.command:
+    cmd: rustup-init -y
+  when: not rust_installed.stat.exists
+  tags:
+    - langs
+    - rust
