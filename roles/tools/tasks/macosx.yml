@@ -1,12 +1,22 @@
 ---
+- name: Tap reckerp/tap
+  community.general.homebrew_tap:
+    name: reckerp/tap
+    state: present
+
+- name: Install gch (reckerp)
+  community.general.homebrew:
+    name: gch
+    state: latest
+
 - name: Install Pandoc
   community.general.homebrew:
     name: pandoc
     state: latest
 
-- name: Install Latex
+- name: Install Typst
   community.general.homebrew_cask:
-    name: mactex-no-gui
+    name: typst
     state: latest
 
 - name: Install Docker
@@ -18,6 +28,11 @@
   community.general.homebrew:
     name: gh
     state: latest
+
+- name: GH CLI | Add dash extension
+  ansible.builtin.command:
+    cmd: gh extension install dlvhdr/gh-dash
+    creates: ~/.local/share/gh/extensions/gh-dash
 
 - name: Install Eza
   community.general.homebrew:
@@ -39,20 +54,35 @@
     name: zoxide
     state: latest
 
-- name: Install pyenv
+- name: Install hcloud
   community.general.homebrew:
-    name: pyenv 
+    name: hcloud
+    state: latest
+
+- name: Install terraform
+  community.general.homebrew:
+    name: terraform
+    state: latest
+
+- name: Install lazygit
+  community.general.homebrew:
+    name: lazygit
+    state: latest
+
+- name: Install opencode
+  community.general.homebrew:
+    name: opencode
     state: latest
 
 - name: Install NVM
-  block: 
+  block:
     - name: Create .nvm directory
       file:
         path: ~/.nvm
         state: directory
-        mode: 0770  
+        mode: 0770
 
-    - name: Download nvm installation script 
+    - name: Download nvm installation script
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
         dest: /tmp/install-nvm.sh

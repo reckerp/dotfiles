@@ -37,3 +37,6 @@
 
 - name: "Git | Turn on signing"
   command: git config --global commit.gpgsign true
+
+- name: "Git | Turn on auto remote setup"
+  command: git config --global push.autoSetupRemote true
