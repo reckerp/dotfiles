@@ -4,9 +4,9 @@
     name: 1password
     state: latest
 
-- name: Homebrew | Install Arc
+- name: Homebrew | Install Chrome
   community.general.homebrew_cask:
-    name: arc
+    name: google-chrome
     state: latest
 
 - name: Homebrew | Install Spotify
@@ -17,11 +17,6 @@
 - name: Homebrew | Install Notion
   community.general.homebrew_cask:
     name: notion
-    state: latest
-
-- name: Homebrew | Install Slack
-  community.general.homebrew_cask:
-    name: slack
     state: latest
 
 - name: Homebrew | Install Raycast
@@ -44,11 +39,6 @@
     name: jetbrains-toolbox
     state: latest
 
-- name: Homebrew | Install Deepl
-  community.general.homebrew_cask:
-    name: deepl
-    state: latest
-
 - name: Homebrew | Install TickTick
   community.general.homebrew_cask:
     name: ticktick
@@ -64,9 +54,9 @@
     name: firefox
     state: latest
 
-- name: Homebrew | Install Postman
+- name: Homebrew | Install Bruno
   community.general.homebrew_cask:
-    name: postman
+    name: bruno 
     state: latest
 
 - name: Homebrew | Install Boop
@@ -74,19 +64,9 @@
     name: boop
     state: latest
 
-- name: Homebrew | Install Lens
-  community.general.homebrew_cask:
-    name: lens
-    state: latest
-
 - name: Homebrew | Install Cursor
   community.general.homebrew_cask:
     name: cursor
-    state: latest
-
-- name: Homebrew | Install Flutter
-  community.general.homebrew_cask:
-    name: flutter
     state: latest
 
 - name: Homebrew | Install Yubico Authenticator
@@ -94,3 +74,7 @@
     name: yubico-authenticator
     state: latest
     
+- name: Homebrew | Install Tailscale
+  community.general.homebrew_cask:
+    name: tailscale-app
+    state: latest

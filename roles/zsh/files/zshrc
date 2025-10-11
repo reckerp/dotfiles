@@ -33,9 +33,6 @@ source $ZSH/oh-my-zsh.sh
 
 # alias
 source ~/.alias
-source ~/.secrets
-
-
 
 # add envs for plugins
 eval "$(fzf --zsh)"

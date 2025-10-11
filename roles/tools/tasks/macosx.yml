@@ -24,11 +24,6 @@
     name: docker
     state: latest
 
-- name: Install minikube
-  community.general.homebrew:
-    name: minikube
-    state: latest
-
 - name: GH CLI
   community.general.homebrew:
     name: gh
@@ -59,26 +54,6 @@
     name: zoxide
     state: latest
 
-- name: Install pyenv
-  community.general.homebrew:
-    name: pyenv
-    state: latest
-
-- name: Install kubectl
-  community.general.homebrew:
-    name: kubernetes-cli
-    state: latest
-
-- name: Install helm
-  community.general.homebrew:
-    name: helm
-    state: latest
-
-- name: Install kubectx
-  community.general.homebrew:
-    name: kubectx
-    state: latest
-
 - name: Install hcloud
   community.general.homebrew:
     name: hcloud
@@ -94,14 +69,9 @@
     name: lazygit
     state: latest
 
-- name: Install k9s
+- name: Install opencode
   community.general.homebrew:
-    name: k9s
-    state: latest
-
-- name: Install xh
-  community.general.homebrew:
-    name: xh
+    name: opencode
     state: latest
 
 - name: Install NVM

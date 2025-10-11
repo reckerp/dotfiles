@@ -1,10 +1,8 @@
-alias tmp="mkdir ~/Desktop/tmp && cd ~/Desktop/tmp"
-alias dtmp="rm -rf ~/Desktop/tmp"
-
 alias nv="nvim"
-alias kc="kubectl"
 
 alias ga="git add ."
+alias gca="git commit --amend --no-edit --date=now"
+alias gcam="git commit --amend --date=now"
 alias gs="git status"
 alias gc="git commit -m"
 alias gp="git push"
@@ -18,3 +16,7 @@ alias ls="eza -l --header --icons --git"
 alias py="python3"
 
 alias ip="curl ifconfig.me"
+
+alias lz="lazygit"
+
+alias oc="opencode"

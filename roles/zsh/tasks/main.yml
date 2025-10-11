@@ -50,12 +50,6 @@
     dest: "{{ ansible_user_dir }}/.alias"
     force: true
 
-- name: "zsh | Copy .secrets"
-  ansible.builtin.copy:
-    content: "{{ zsh_s }}"
-    dest: "{{ ansible_user_dir }}/.secrets"
-    force: true
-
 - name: "zsh | Create ssh directory if it doesn't exist"
   ansible.builtin.file:
     path: "{{ ansible_user_dir }}/.ssh"
