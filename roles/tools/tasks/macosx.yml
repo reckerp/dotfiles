@@ -1,86 +1,45 @@
 ---
-- name: Tap reckerp/tap
+- name: Tap Homebrew repositories
   community.general.homebrew_tap:
-    name: reckerp/tap
+    name: "{{ item }}"
     state: present
+  loop: "{{ homebrew_taps }}"
+  tags:
+    - tools
+    - homebrew
 
-- name: Install gch (reckerp)
+- name: Install Homebrew packages
   community.general.homebrew:
-    name: gch
-    state: latest
-
-- name: Install Pandoc
-  community.general.homebrew:
-    name: pandoc
-    state: latest
-
-- name: Install Typst
-  community.general.homebrew_cask:
-    name: typst
-    state: latest
-
-- name: Install Docker
-  community.general.homebrew_cask:
-    name: docker
-    state: latest
-
-- name: GH CLI
-  community.general.homebrew:
-    name: gh
-    state: latest
+    name: "{{ item }}"
+    state: present
+  loop: "{{ homebrew_packages }}"
+  tags:
+    - tools
+    - cli
 
 - name: GH CLI | Add dash extension
   ansible.builtin.command:
     cmd: gh extension install dlvhdr/gh-dash
     creates: ~/.local/share/gh/extensions/gh-dash
-
-- name: Install Eza
-  community.general.homebrew:
-    name: eza
-    state: latest
-
-- name: Install FZF
-  community.general.homebrew:
-    name: fzf
-    state: latest
-
-- name: Install Ripgrep
-  community.general.homebrew:
-    name: ripgrep
-    state: latest
-
-- name: Install zoxide
-  community.general.homebrew:
-    name: zoxide
-    state: latest
-
-- name: Install hcloud
-  community.general.homebrew:
-    name: hcloud
-    state: latest
-
-- name: Install terraform
-  community.general.homebrew:
-    name: terraform
-    state: latest
-
-- name: Install lazygit
-  community.general.homebrew:
-    name: lazygit
-    state: latest
-
-- name: Install opencode
-  community.general.homebrew:
-    name: opencode
-    state: latest
+  tags:
+    - tools
+    - gh
 
 - name: Install NVM
+  tags:
+    - tools
+    - nvm
   block:
     - name: Create .nvm directory
-      file:
+      ansible.builtin.file:
         path: ~/.nvm
         state: directory
         mode: 0770
+
+    - name: Check if NVM is already installed
+      ansible.builtin.stat:
+        path: ~/.nvm/nvm.sh
+      register: nvm_installed
 
     - name: Download nvm installation script
       ansible.builtin.get_url:
@@ -88,7 +47,10 @@
         dest: /tmp/install-nvm.sh
         force: true
         mode: 0755
+      when: not nvm_installed.stat.exists
 
     - name: Install NVM
-      ansible.builtin.script:
-        cmd: "/tmp/install-nvm.sh && source ~/.nvm/nvm.sh"
+      ansible.builtin.shell: /tmp/install-nvm.sh
+      args:
+        creates: ~/.nvm/nvm.sh
+      when: not nvm_installed.stat.exists

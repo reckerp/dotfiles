@@ -1,80 +1,9 @@
 ---
-- name: Homebrew | Install 1Password
+- name: Install Homebrew Cask applications
   community.general.homebrew_cask:
-    name: 1password
-    state: latest
-
-- name: Homebrew | Install Chrome
-  community.general.homebrew_cask:
-    name: google-chrome
-    state: latest
-
-- name: Homebrew | Install Spotify
-  community.general.homebrew_cask:
-    name: spotify
-    state: latest
-
-- name: Homebrew | Install Notion
-  community.general.homebrew_cask:
-    name: notion
-    state: latest
-
-- name: Homebrew | Install Raycast
-  community.general.homebrew_cask:
-    name: raycast 
-    state: latest
-
-- name: Homebrew | Install CommandX
-  community.general.homebrew_cask:
-    name: command-x
-    state: latest
-
-- name: Homebrew | Install Bartender
-  community.general.homebrew_cask:
-    name: bartender
-    state: latest
-
-- name: Homebrew | Install Jetbrains Toolbox
-  community.general.homebrew_cask:
-    name: jetbrains-toolbox
-    state: latest
-
-- name: Homebrew | Install TickTick
-  community.general.homebrew_cask:
-    name: ticktick
-    state: latest
-
-- name: Homebrew | Install AppCleaner
-  community.general.homebrew_cask:
-    name: appcleaner
-    state: latest
-
-- name: Homebrew | Install Firefox
-  community.general.homebrew_cask:
-    name: firefox
-    state: latest
-
-- name: Homebrew | Install Bruno
-  community.general.homebrew_cask:
-    name: bruno 
-    state: latest
-
-- name: Homebrew | Install Boop
-  community.general.homebrew_cask:
-    name: boop
-    state: latest
-
-- name: Homebrew | Install Cursor
-  community.general.homebrew_cask:
-    name: cursor
-    state: latest
-
-- name: Homebrew | Install Yubico Authenticator
-  community.general.homebrew_cask:
-    name: yubico-authenticator
-    state: latest
-    
-- name: Homebrew | Install Tailscale
-  community.general.homebrew_cask:
-    name: tailscale-app
-    state: latest
+    name: "{{ item }}"
+    state: present
+  loop: "{{ cask_apps }}"
+  tags:
+    - casks
+    - apps
