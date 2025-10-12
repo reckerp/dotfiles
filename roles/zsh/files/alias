@@ -20,3 +20,12 @@ alias ip="curl ifconfig.me"
 alias lz="lazygit"
 
 alias oc="opencode"
+
+alias devupdate='
+  cd ~/Developer/dotfiles || { echo "> Failed to enter dotfiles directory"; return 1; }
+  git stash push -m "auto-stash before pull" >/dev/null \
+    && git pull --rebase \
+    && git stash pop || echo "> Nothing to pop or merge conflict";
+  ansible-playbook main.yml \
+    --vault-password-file .vault_pass -K
+'

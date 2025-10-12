@@ -1,4 +1,12 @@
 ---
+- name: Tap oven-sh/bun
+  community.general.homebrew_tap:
+    name: oven-sh/bun
+    state: present
+  tags:
+    - langs
+    - languages
+
 - name: Install languages via Homebrew
   community.general.homebrew:
     name: "{{ item.name }}"

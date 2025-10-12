@@ -27,9 +27,9 @@ cask_apps:
   - boop
   - cursor
   - yubico-authenticator
-  - tailscale-app
 
 homebrew_packages:
+  - docker
   - gch
   - pandoc
   - gh
@@ -38,14 +38,11 @@ homebrew_packages:
   - ripgrep
   - zoxide
   - hcloud
+  - typst
   - terraform
   - lazygit
   - opencode
   - syncthing
-
-homebrew_cask_packages:
-  - typst
-  - docker
 
 homebrew_taps:
   - reckerp/tap

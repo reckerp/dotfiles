@@ -17,14 +17,6 @@
     - tools
     - cli
 
-- name: Install Homebrew Cask packages
-  community.general.homebrew_cask:
-    name: "{{ item }}"
-    state: present
-  loop: "{{ homebrew_cask_packages }}"
-  tags:
-    - tools
-
 - name: GH CLI | Add dash extension
   ansible.builtin.command:
     cmd: gh extension install dlvhdr/gh-dash

@@ -54,5 +54,4 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # zoxide (cd replacement)
 eval "$(zoxide init zsh --cmd cd)"
 
-export PATH="$(pyenv root)/shims:$PATH"
 export PATH="$PATH:$HOME/flutter/flutter/bin"
