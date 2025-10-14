@@ -33,6 +33,7 @@ cask_apps:
 homebrew_packages:
   - docker
   - gch
+  - hcbox
   - pandoc
   - gh
   - eza
