@@ -29,6 +29,7 @@ cask_apps:
   - yubico-authenticator
   - whatsapp
   - microsoft-teams
+  - discord
 
 homebrew_packages:
   - docker
