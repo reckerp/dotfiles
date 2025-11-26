@@ -1,23 +1,5 @@
 return {
   {
-    "f-person/auto-dark-mode.nvim",
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.api.nvim_set_option("background", "dark")
-        vim.cmd("colorscheme gruvbox")
-        -- Apply GruvboxDarkHard contrast
-        vim.g.gruvbox_contrast_dark = "hard"
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option("background", "light")
-        vim.cmd("colorscheme gruvbox")
-        -- Normal light contrast
-        vim.g.gruvbox_contrast_light = "medium"
-      end,
-    },
-  },
-  {
     "ellisonleao/gruvbox.nvim",
     name = "gruvbox",
     priority = 1000,
@@ -45,7 +27,21 @@ return {
       require("gruvbox").setup(opts)
       -- Set default dark contrast to hard
       vim.g.gruvbox_contrast_dark = "hard"
-      vim.cmd.colorscheme("gruvbox")
+      -- vim.cmd.colorscheme("gruvbox")
+    end,
+  },
+  {
+    "metalelf0/black-metal-theme-neovim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("black-metal").setup({
+        -- optional configuration here
+        transparent = false,
+        variant = "dark",
+        theme = "burzum",
+      })
+      require("black-metal").load()
     end,
   },
 }
