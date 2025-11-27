@@ -21,6 +21,8 @@ alias lz="lazygit"
 
 alias oc="opencode"
 
+alias kc="kubectl"
+
 alias devupdate='
   cd ~/Developer/dotfiles || { echo "> Failed to enter dotfiles directory"; return 1; }
   git stash push -m "auto-stash before pull" >/dev/null \
