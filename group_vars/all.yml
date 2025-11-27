@@ -30,9 +30,9 @@ cask_apps:
   - whatsapp
   - microsoft-teams
   - discord
+  - orbstack
 
 homebrew_packages:
-  - docker
   - gch
   - hcbox
   - watchman
