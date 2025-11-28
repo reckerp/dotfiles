@@ -37,7 +37,7 @@ return {
     config = function()
       require("black-metal").setup({
         -- optional configuration here
-        transparent = false,
+        transparent = true,
         variant = "dark",
         theme = "burzum",
       })
