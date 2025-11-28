@@ -50,14 +50,3 @@
     dest: "{{ ansible_user_dir }}/.alias"
     force: true
 
-- name: "zsh | Create ssh directory if it doesn't exist"
-  ansible.builtin.file:
-    path: "{{ ansible_user_dir }}/.ssh"
-    state: directory
-    mode: "0755"
-
-- name: "zsh | Copy ssh config"
-  ansible.builtin.copy:
-    content: "{{ ssh_config }}"
-    dest: "{{ ansible_user_dir }}/.ssh/config"
-    force: true
