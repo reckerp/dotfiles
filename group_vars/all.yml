@@ -14,7 +14,6 @@ default_roles:
 cask_apps:
   - 1password
   - google-chrome
-  - spotify
   - notion
   - raycast
   - command-x
