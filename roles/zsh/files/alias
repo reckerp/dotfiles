@@ -22,6 +22,7 @@ alias lz="lazygit"
 alias oc="opencode"
 
 alias kc="kubectl"
+alias tf="terraform"
 
 alias devupdate='
   cd ~/Developer/dotfiles || { echo "> Failed to enter dotfiles directory"; return 1; }
