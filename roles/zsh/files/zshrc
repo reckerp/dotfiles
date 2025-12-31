@@ -41,6 +41,10 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+
+# local bin
+export PATH="/Users/recker/.local/bin:$PATH"
+
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
@@ -50,6 +54,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # GCP
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
 
 # Go binaries
 export PATH="$PATH:$(go env GOPATH)/bin"
