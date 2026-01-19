@@ -65,3 +65,5 @@ eval "$(zoxide init zsh --cmd cd)"
 export PATH="$PATH:$HOME/flutter/flutter/bin"
 
 export EDITOR=nvim
+
+eval "$(gx setup)"

@@ -35,7 +35,7 @@ cask_apps:
   - zed
 
 homebrew_packages:
-  - gch
+  - gx
   - hcbox
   - watchman
   - pandoc
