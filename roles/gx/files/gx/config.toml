@@ -1,0 +1,15 @@
+[ai]
+model = "opencode/big-pickle"
+
+[aliases]
+gch = "checkout"
+gco = "checkout"
+gs = "status"
+gc = "commit"
+gca = "commit --amend --no-edit"
+gcai = "commit --ai"
+gp = "push"
+gpl = "pull"
+gst = "stash"
+ga = "add"
+gl = "log"

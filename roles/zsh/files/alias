@@ -1,26 +1,10 @@
 alias nv="nvim"
 
-alias ga="git add ."
-alias gca="git commit --amend --no-edit --date=now"
-alias gcam="git commit --amend --date=now"
-alias gs="git status"
-alias gc="git commit -m"
-alias gp="git push"
-alias gpl="git pull"
-alias gst="git stash"
-alias gsp="git stash pop"
-alias glg="git log --graph --oneline"
-
 alias ls="eza -l --header --icons --git"
-
 alias py="python3"
-
 alias ip="curl ifconfig.me"
-
 alias lz="lazygit"
-
 alias oc="opencode"
-
 alias kc="kubectl"
 alias tf="terraform"
 

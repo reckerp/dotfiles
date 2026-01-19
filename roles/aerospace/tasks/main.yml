@@ -1,14 +1,13 @@
 - name: "Aerospace | Run Tasks: {{ ansible_distribution }}"
   ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
 
-
 - name: "Aerospace | Config folder"
   ansible.builtin.file:
     mode: "0755"
     path: "{{ ansible_user_dir }}/.config/aerospace"
     state: directory
 
-- name: "Tmux | Create symlink to role files directory"
+- name: "Aerospace | Create symlink to role files directory"
   ansible.builtin.file:
     src: "{{ role_path }}/files/aerospace"
     dest: "{{ ansible_user_dir }}/.config/aerospace"
