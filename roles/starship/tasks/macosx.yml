@@ -1,5 +1,0 @@
----
-- name: Install Starship using Homebrew
-  community.general.homebrew:
-    name: starship
-    state: latest

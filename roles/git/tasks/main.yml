@@ -13,19 +13,19 @@
 
 - name: Create .ssh dir
   ansible.builtin.file:
-    path: "{{ ansible_user_dir }}/.ssh"
+    path: "{{ ansible_facts.user_dir }}/.ssh"
     state: directory
     mode: '0755'
 
 - name: "Git | Copy Signing Key public"
   copy:
-    dest: "{{ ansible_user_dir }}/.ssh/git_sign_key.pub"
+    dest: "{{ ansible_facts.user_dir }}/.ssh/git_sign_key.pub"
     content: "{{ git_sign_key_pub }}"
     mode: '0400'
 
 - name: "Git | Copy Signing Key private"
   copy:
-    dest: "{{ ansible_user_dir }}/.ssh/git_sign_key"
+    dest: "{{ ansible_facts.user_dir }}/.ssh/git_sign_key"
     content: "{{ git_sign_key }}"
     mode: '0400'
 
