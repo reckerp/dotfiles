@@ -35,7 +35,7 @@ cask_apps:
   - zed
 
 homebrew_packages:
-  - gx
+  - reckerp/tap/gx
   - hcbox
   - watchman
   - pandoc
