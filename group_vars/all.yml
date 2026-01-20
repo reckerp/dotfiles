@@ -19,7 +19,6 @@ cask_apps:
   - command-x
   - bartender
   - jetbrains-toolbox
-  - ticktick
   - appcleaner
   - firefox
   - bruno
