@@ -1,10 +1,10 @@
 return {
   -- disable lualine
   { "nvim-lualine/lualine.nvim", enabled = false },
-  
+
   -- configure mini.statusline
   {
-    "echasnovski/mini.statusline",
+    "nvim-mini/mini.statusline",
     version = false,
     opts = {
       -- customize content shown in statusline
@@ -35,4 +35,4 @@ return {
       require("mini.statusline").setup(opts)
     end,
   },
-} 
+}
